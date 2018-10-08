@@ -1,5 +1,6 @@
 package com.thealteria.braintrainerapp;
 
+import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     Button play, button0, button1, button2, button3, playAgain;
-    TextView result, sum, points, timer;
+    TextView result, sum, points, timer, brainlogo;
     GridLayout quiz;
     RelativeLayout gameLayout;
 
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         points.setText("0/0");
         result.setText("");
         playAgain.setVisibility(View.INVISIBLE);
+        brainlogo.setVisibility(View.INVISIBLE);
+
         genQues();
 
         new CountDownTimer(30100, 1000) {
@@ -135,10 +138,13 @@ public class MainActivity extends AppCompatActivity {
         button3 =(Button) findViewById(R.id.button4);
         result = (TextView) findViewById(R.id.result);
         points = (TextView) findViewById(R.id.points);
+        brainlogo = findViewById(R.id.textView4);
         timer = (TextView) findViewById(R.id.timer);
         playAgain = (Button) findViewById(R.id.playAgain);
         quiz = (GridLayout) findViewById(R.id.quiz);
         gameLayout = (RelativeLayout) findViewById(R.id.gameLayout);
+
+        brainlogo.setText("  Brain" + "\n" + "Trainer");
 
     }
 }
